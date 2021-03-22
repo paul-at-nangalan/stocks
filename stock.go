@@ -44,6 +44,7 @@ func GetQuote(s string) (Stock, error) {
 
 	err = json.Unmarshal(content, &stock)
 	if err != nil {
+		fmt.Println("Raw data ", content)
 		return stock, fmt.Errorf("stocks cannot parse JSON data: %v", err)
 	}
 	return stock, nil
